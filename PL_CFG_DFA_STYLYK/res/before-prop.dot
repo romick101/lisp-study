@@ -1,0 +1,43 @@
+digraph G {
+graph [];
+
+0 [label="start", ];
+1 [label="id:g1102
+const a := 5 + 3;
+in:nil
+ out:nil", ];
+2 [label="id:g1103
+a + 7;
+in:nil
+ out:nil", ];
+3 [label="id:g1104
+const a := 2;
+in:nil
+ out:nil", ];
+4 [label="id:g1105
+const b := a - 3;
+in:nil
+ out:nil", ];
+5 [label="id:g1106
+a + b
+in:nil
+ out:nil", ];
+6 [label="id:g1107
+const a := 3;
+in:nil
+ out:nil", ];
+8 [label="id:g1108
+a * 3;
+in:nil
+ out:nil", ];
+9 [label="end", ];
+0->1 [];
+1->2 [];
+2->3 [];
+3->4 [];
+4->5 [];
+2->6 [];
+5->8 [];
+6->8 [];
+8->9 [];
+}

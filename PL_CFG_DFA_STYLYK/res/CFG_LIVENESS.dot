@@ -1,0 +1,52 @@
+digraph G {
+graph [];
+
+0 [label="start", ];
+1 [label="id:g1057
+const a := 1;
+in:((id a) (id b))
+ out:((id b) (id a))", ];
+2 [label="id:g1058
+a;
+in:((id b) (id a))
+ out:((id a) (id b))", ];
+4 [label="id:g1059
+const b := 2;
+in:((id b) (id a))
+ out:((id a) (id b))", ];
+5 [label="id:g1060
+b;
+in:((id a) (id b))
+ out:((id a) (id b))", ];
+7 [label="id:g1061
+b;
+in:((id a) (id b))
+ out:((id b) (id a))", ];
+8 [label="break", ];
+10 [label="id:g1063
+222;
+in:((id b) (id a))
+ out:((id a) (id b))", ];
+11 [label="id:g1064
+const a := a;
+in:((id a) (id b))
+ out:((id a) (id b))", ];
+12 [label="id:g1065
+const a := 2;
+in:((id a) (id b))
+ out:((id b) (id a))", ];
+13 [label="end", ];
+0->1 [];
+1->2 [];
+12->2 [];
+2->4 [];
+4->5 [];
+10->5 [];
+5->7 [];
+7->8 [];
+7->10 [];
+5->11 [];
+8->11 [];
+11->12 [];
+2->13 [];
+}

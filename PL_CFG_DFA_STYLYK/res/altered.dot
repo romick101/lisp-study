@@ -1,0 +1,33 @@
+digraph G {
+graph [];
+
+0 [label="start", ];
+1 [label="id:g1298
+(def a (+ 5 3))
+in:nil
+ out:(g1298)", ];
+2 [label="id:g1299
+(+ a 7)
+in:(g1298)
+ out:(g1298)", ];
+3 [label="id:g1300
+(def a 2)
+in:(g1298)
+ out:(g1300)", ];
+4 [label="id:g1301
+(def a 3)
+in:(g1298)
+ out:(g1301)", ];
+6 [label="id:g1302
+(* a 3)
+in:(g1300 g1301)
+ out:(g1301 g1300)", ];
+7 [label="end", ];
+0->1 [];
+1->2 [];
+2->3 [];
+2->4 [];
+3->6 [];
+4->6 [];
+6->7 [];
+}

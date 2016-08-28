@@ -1,0 +1,18 @@
+(defun dfa (graph)
+  (let ((table (make-hash-table :test #'equal))
+	(flag nil))
+    (labels ((%traverse (curr)
+	       (let ((tmp-in (ex-data-in (cl-graph:element curr))))
+		 (unless (gethash (cl-graph:element curr) table)
+		   (setf (ex-data-in (cl-graph:element curr)) (in-rd curr))
+		   (setf (ex-data-out (cl-graph:element curr)) (out-rd curr graph))
+		   (when (not (equalp tmp-in
+				      (ex-data-in (cl-graph:element curr))))
+		     (setf flag t))
+		   (setf (gethash (cl-graph:element curr) table) t)
+		   (mapcar (lambda (child)
+			     (%traverse child))
+			   (cl-graph:child-vertexes curr))))))
+      (%traverse (first (cl-graph:graph-roots graph))))
+    (when flag
+      (reaching-definitions graph))))
